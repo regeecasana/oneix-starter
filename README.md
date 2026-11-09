@@ -22,11 +22,11 @@ see each component with that customer's data.
 
 | Folder | What goes in it | Owner |
 | --- | --- | --- |
-| `contracts/` | Data types. **Don't change without Regee's review.** | Regee |
-| `mock-data/` | Fake customers, segments, scenario guides | Apprentice 1 |
-| `components/insights/` | Agent-view components (CLTV, segments, CSAT, channels, retention) | Apprentice 2 |
+| `contracts/` | Data types. **Don't change without review.** | Regee |
+| `mock-data/` | Fake customers, segments, scenario guides |  |
+| `components/insights/` | Agent-view components (CLTV, segments, CSAT, channels, retention) | |
 | `components/ui/` | shadcn components copied from ONEix. Add more with `npx shadcn add <name>` | — |
-| `i18n/` | Languages and translation files | Apprentice 2 |
+| `i18n/` | Languages and translation files | |
 | `app/` | The playground page | Both |
 
 ## Rules
