@@ -1,0 +1,12 @@
+{
+  "chat.placeholder": "Type your message…",
+  "chat.send": "Send",
+  "chat.suggested": "You can ask",
+  "chat.connecting": "Connecting you to an agent…",
+  "chat.agentJoined": "{name} has joined the conversation",
+  "chat.aiAssistant": "AI assistant",
+  "guide.title": "Your situation",
+  "guide.keyFacts": "What you know",
+  "guide.goals": "What you want",
+  "language.label": "Language"
+}
