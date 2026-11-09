@@ -44,10 +44,10 @@ see each component with that customer's data.
 
 Full list and schedule: the "ONEix prototype — 11/04 update tickets" doc.
 
-**Apprentice 1:** A1-1 mock data, A1-2 Retail scenario, A1-3 scenario guides,
+**1:** A1-1 mock data, A1-2 Retail scenario, A1-3 scenario guides,
 A1-4 phygital timelines, A1-5 CSAT and churn signals, A1-6 Quilr research.
 
-**Apprentice 2:** A2-1 language switcher, A2-2 CLTV, A2-3 segment labels,
+**   2:** A2-1 language switcher, A2-2 CLTV, A2-3 segment labels,
 A2-4 CSAT stars, A2-5 channel icons, A2-7 retention block, A2-8 segment filter.
 
 ## How this moves into ONEix (Regee)
