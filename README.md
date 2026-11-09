@@ -40,6 +40,31 @@ see each component with that customer's data.
 5. Always write "ONEix" in UI text.
 6. No real customer data, credentials or client names. Everything here is fictional.
 
+## Languages (all 6, every scenario)
+
+Everything the customer sees must exist in all 6 languages: UI text and every
+scenario guide (situation, key facts, goals, suggested questions).
+
+- English source: `i18n/locales/en.json` (UI) and `mock-data/scenario-guides.ts` (guides).
+- Translations: `i18n/locales/<lang>.json` and `i18n/guides/<lang>.json`. Don't edit these by hand.
+
+```bash
+npm run i18n:export   # creates translations.csv: upload it to Google Sheets
+                      # fill the empty cells, File > Download > CSV, save as translations.csv here
+npm run i18n:import   # writes the translations into i18n/
+npm run i18n:check    # lists anything still missing; must pass before the demo
+```
+
+Machine translation is fine for a first pass; get a native speaker to check
+Thai, Vietnamese and Indonesian if possible.
+
+## Scenario guides
+
+Guides tell the person playing the customer what happened and what they want.
+They are **not scripts**: no dialogue, the customer talks in their own words.
+The facts come from the scenario stories Regee's Cognigy flows follow, so if a
+flow changes, update the guide to match.
+
 ## Tickets
 
 Full list and schedule: the "ONEix prototype — 11/04 update tickets" doc.

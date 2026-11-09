@@ -9,6 +9,9 @@
 // Types
 // ---------------------------------------------------------------------------
 
+/** The 6 customer-interface languages. */
+export type LanguageCode = "en" | "fil" | "ms" | "id" | "th" | "vi"
+
 export type IndustryId = "banking" | "travel" | "education" | "healthcare" | "retail"
 
 export type Currency = "SGD" | "PHP" | "MYR" | "USD"
@@ -109,6 +112,7 @@ export type TimelineEventType =
   | "cart_abandoned"
   | "email_opened"
   | "social_message"
+  | "phone_call"
   | "support_contact"
 
 export interface TimelineEvent {
@@ -136,7 +140,7 @@ export interface CustomerInsights {
   brand: string
   location: string
   customerSince: string
-  preferredLanguage: "en" | "fil" | "ms" | "id" | "th" | "vi"
+  preferredLanguage: LanguageCode
   preferredChannel: Channel
   segments: SegmentId[]
   cltv: Cltv
@@ -147,16 +151,21 @@ export interface CustomerInsights {
   phygital: boolean
 }
 
-/** The "literal guide" shown to the person playing the customer in the demo. */
+/**
+ * The guide shown to the person playing the customer in the demo.
+ * It is NOT a script: it tells them what happened and what they want, and they
+ * talk to the AI in their own words. Authored in English; translated per language
+ * (see `i18n/guides.ts`).
+ */
 export interface ScenarioGuide {
   scenarioId: string
   customerId: string
-  /** What happened, from the customer's point of view. */
+  /** What happened, from the customer's point of view ("You are Maya…"). */
   situation: string
-  /** Facts the demo customer can reference ("Maya did not do this transaction"). */
+  /** Facts the customer can use ("You did NOT make the LUXEMARKET purchase"). */
   keyFacts: string[]
-  /** What the customer is trying to get out of the conversation. */
+  /** What the customer wants out of the conversation. */
   goals: string[]
-  /** Suggested-question chips. Free text is always allowed. */
+  /** Suggested-question chips. Tapping one sends it; free text is always allowed. */
   suggestedQuestions: string[]
 }

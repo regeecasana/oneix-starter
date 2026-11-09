@@ -9,6 +9,8 @@ import { useState } from "react"
 
 import { SegmentLabel } from "@/components/insights/segment-label"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { localizeGuide } from "@/i18n/guides"
+import { languages, type LanguageCode } from "@/i18n/languages"
 import { customers, getScenarioGuide, segments } from "@/mock-data"
 
 function Section({ ticket, title, children }: { ticket: string; title: string; children?: React.ReactNode }) {
@@ -30,7 +32,9 @@ function Section({ ticket, title, children }: { ticket: string; title: string; c
 export function Playground() {
   const [customerId, setCustomerId] = useState(customers[0].customerId)
   const customer = customers.find((c) => c.customerId === customerId)!
-  const guide = getScenarioGuide(customer.scenarioId)
+  const [lang, setLang] = useState<LanguageCode>("en")
+  const rawGuide = getScenarioGuide(customer.scenarioId)
+  const guide = rawGuide && localizeGuide(rawGuide, lang)
 
   return (
     <main className="mx-auto max-w-5xl space-y-6 p-8">
@@ -67,7 +71,18 @@ export function Playground() {
         <Section ticket="A2-1" title="Language switcher" />
       </div>
 
-      <Section ticket="A1-3" title="Scenario guide data">
+      <Section ticket="A1-3" title="Scenario guide data (temporary language picker until A2-1 is done)">
+        <select
+          className="mb-3 rounded-md border bg-background px-2 py-1 text-xs"
+          value={lang}
+          onChange={(e) => setLang(e.target.value as LanguageCode)}
+        >
+          {languages.map((l) => (
+            <option key={l.code} value={l.code}>
+              {l.label}
+            </option>
+          ))}
+        </select>
         {guide ? (
           <pre className="overflow-x-auto text-xs">{JSON.stringify(guide, null, 2)}</pre>
         ) : (
