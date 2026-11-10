@@ -7,6 +7,11 @@
  */
 import { useState } from "react"
 
+import { ChannelBadge, allChannels } from "@/components/insights/channel-icon"
+import { CltvCard } from "@/components/insights/cltv-card"
+import { TicketCsatList } from "@/components/insights/csat-stars"
+import { LanguageSwitcher } from "@/components/insights/language-switcher"
+import { RetentionInsight } from "@/components/insights/retention-insight"
 import { SegmentLabel } from "@/components/insights/segment-label"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { localizeGuide } from "@/i18n/guides"
@@ -64,25 +69,41 @@ export function Playground() {
             ))}
           </div>
         </Section>
-        <Section ticket="A2-2" title="CLTV badge and gauge" />
-        <Section ticket="A2-4" title="Per-ticket CSAT stars" />
-        <Section ticket="A2-5" title="Channel icons" />
-        <Section ticket="A2-7" title="Retention insight (P2)" />
-        <Section ticket="A2-1" title="Language switcher" />
+        <Section ticket="A2-2" title="CLTV badge and gauge">
+          <CltvCard cltv={customer.cltv} />
+        </Section>
+        <Section ticket="A2-4" title="Per-ticket CSAT stars">
+          <TicketCsatList history={customer.csatHistory} />
+        </Section>
+        <Section ticket="A2-5" title="Channel icons">
+          <div className="space-y-3">
+            <div>
+              <span className="text-xs text-muted-foreground block mb-1.5">
+                Preferred channel ({customer.name}):
+              </span>
+              <ChannelBadge channel={customer.preferredChannel} />
+            </div>
+            <div className="border-t pt-2.5">
+              <span className="text-xs text-muted-foreground block mb-2">
+                Available channels (static showcase):
+              </span>
+              <div className="flex flex-wrap gap-2">
+                {allChannels.map((ch) => (
+                  <ChannelBadge key={ch} channel={ch} />
+                ))}
+              </div>
+            </div>
+          </div>
+        </Section>
+        <Section ticket="A2-7" title="Retention insight (P2)">
+          <RetentionInsight retention={customer.retention} />
+        </Section>
+        <Section ticket="A2-1" title="Language switcher">
+          <LanguageSwitcher currentLanguage={lang} onLanguageChange={setLang} />
+        </Section>
       </div>
 
-      <Section ticket="A1-3" title="Scenario guide data (temporary language picker until A2-1 is done)">
-        <select
-          className="mb-3 rounded-md border bg-background px-2 py-1 text-xs"
-          value={lang}
-          onChange={(e) => setLang(e.target.value as LanguageCode)}
-        >
-          {languages.map((l) => (
-            <option key={l.code} value={l.code}>
-              {l.label}
-            </option>
-          ))}
-        </select>
+      <Section ticket="A1-3" title="Scenario guide data">
         {guide ? (
           <pre className="overflow-x-auto text-xs">{JSON.stringify(guide, null, 2)}</pre>
         ) : (

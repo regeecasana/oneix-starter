@@ -1,1 +1,12 @@
-{}
+{
+  "chat.placeholder": "Nhập tin nhắn của bạn…",
+  "chat.send": "Gửi",
+  "chat.suggested": "Bạn có thể hỏi",
+  "chat.connecting": "Đang kết nối bạn với nhân viên hỗ trợ…",
+  "chat.agentJoined": "{name} đã tham gia cuộc trò chuyện",
+  "chat.aiAssistant": "Trợ lý AI",
+  "guide.title": "Tình huống của bạn",
+  "guide.keyFacts": "Những điều bạn biết",
+  "guide.goals": "Điều bạn mong muốn",
+  "language.label": "Ngôn ngữ"
+}

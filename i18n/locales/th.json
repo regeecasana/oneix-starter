@@ -1,1 +1,12 @@
-{}
+{
+  "chat.placeholder": "พิมพ์ข้อความของคุณ…",
+  "chat.send": "ส่ง",
+  "chat.suggested": "คุณสามารถถามได้",
+  "chat.connecting": "กำลังเชื่อมต่อคุณกับเจ้าหน้าที่…",
+  "chat.agentJoined": "{name} เข้าร่วมการสนทนาแล้ว",
+  "chat.aiAssistant": "ผู้ช่วย AI",
+  "guide.title": "สถานการณ์ของคุณ",
+  "guide.keyFacts": "สิ่งที่คุณทราบ",
+  "guide.goals": "สิ่งที่คุณต้องการ",
+  "language.label": "ภาษา"
+}
