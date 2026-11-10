@@ -1,1 +1,12 @@
-{}
+{
+  "chat.placeholder": "Ketik pesan Anda…",
+  "chat.send": "Kirim",
+  "chat.suggested": "Anda bisa bertanya",
+  "chat.connecting": "Menghubungkan Anda ke petugas…",
+  "chat.agentJoined": "{name} telah bergabung dalam percakapan",
+  "chat.aiAssistant": "Asisten AI",
+  "guide.title": "Situasi Anda",
+  "guide.keyFacts": "Hal yang Anda ketahui",
+  "guide.goals": "Hal yang Anda inginkan",
+  "language.label": "Bahasa"
+}

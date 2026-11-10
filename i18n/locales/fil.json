@@ -1,1 +1,12 @@
-{}
+{
+  "chat.placeholder": "I-type ang iyong mensahe…",
+  "chat.send": "Ipadala",
+  "chat.suggested": "Maaari mong itanong",
+  "chat.connecting": "Ikinokonekta ka sa isang ahente…",
+  "chat.agentJoined": "Sumali na si {name} sa pag-uusap",
+  "chat.aiAssistant": "AI assistant",
+  "guide.title": "Ang iyong sitwasyon",
+  "guide.keyFacts": "Ang mga alam mo",
+  "guide.goals": "Ang gusto mo",
+  "language.label": "Wika"
+}
